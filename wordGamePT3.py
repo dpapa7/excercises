@@ -1,25 +1,12 @@
-
 from urllib.request import urlopen
 import random
 
-#reference word file
-# f = open("words.txt", "r")
-# word = []
-
-# with open ("words.txt", "r") as file:
-#     allText = file.read()
-#     words = list(map(str,allText.split())) 
-
-# #count number of lines in word file
-# for lineCount, line in enumerate (f):
-#     pass
-# lineCount + 1
-
+#create a list holding words from source
 word_list = urlopen("https://raw.githubusercontent.com/dwyl/english-words/master/words.txt").read().decode('utf-8')
 word_list = word_list.split('\n')
 
 
-#select a random word from file
+#select a random word from list
 randomNUM = random.randint(0, len(word_list))
 word = word_list[randomNUM]
 
